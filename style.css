@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&family=Lexend+Deca:wght@100..900&display=swap");
+/* Start Variables */
+:root {
+  --first-card: hsl(31, 77%, 52%);
+  --second-card: hsl(184, 100%, 22%);
+  --third-card: hsl(179, 100%, 13%);
+  --para-color: hsla(0, 0%, 100%, 0.75);
+  --bg-h-btn-color: hsl(0, 0%, 95%);
+}
+/* End Variables */
+/* Start Global Rules */
+:is(*, *::before, *::after) {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: var(--bg-h-btn-color);
+  font-family: "Big Shoulders Display", sans-serif;
+  font-size: 1rem;
+  padding: 20px;
+}
+p,
+button {
+  font-family: "Lexend Deca", sans-serif;
+}
+h1 {
+  margin: 0;
+}
+/* End Global Rules */
+
+.card-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-box .card-box__card {
+  grid-template-rows: 3.7em 3.7em 14.5em auto;
+  grid-row-gap: 10px;
+  width: 280px;
+  padding: 50px 40px;
+  display: grid;
+}
+.card-box .card-box__card.card-box__card--orange {
+  background-color: var(--first-card);
+  border-radius: 10px 0 0 10px;
+}
+.card-box .card-box__card.card-box__card--cyan {
+  background-color: var(--second-card);
+}
+.card-box .card-box__card.card-box__card--dark-cyan {
+  background-color: var(--third-card);
+  border-radius: 0 10px 10px 0;
+}
+.card-box .card-box__card h1.card-box__card-header {
+  color: var(--bg-h-btn-color);
+}
+.card-box .card-box__card .card-box__card-para {
+  color: var(--para-color);
+  line-height: 1.6;
+  font-size: 15px;
+  font-weight: 200;
+}
+.card-box .card-box__card .card-box__card-btn {
+  border: 0;
+  height: 45px;
+  width: 70%;
+  border-radius: 25px;
+  font-size: 14px;
+}
+.card-box .card-box__card .card-box__card-btn.card-box__card-btn--orange {
+  color: var(--first-card);
+}
+.card-box .card-box__card .card-box__card-btn.card-box__card-btn--cyan {
+  color: var(--second-card);
+}
+.card-box .card-box__card .card-box__card-btn.card-box__card-btn--dark-cyan {
+  color: var(--third-card);
+}
+
+@media screen and (max-width: 375px) {
+  .card-box {
+    display: flex;
+    flex-direction: column;
+  }
+  .card-box .card-box__card {
+    grid-template-rows: 3.7em 3.7em 8.5em auto;
+  }
+  .card-box .card-box__card.card-box__card--orange {
+    border-radius: 10px 10px 0 0;
+  }
+  .card-box .card-box__card.card-box__card--dark-cyan {
+    border-radius: 0 0 10px 10px;
+  }
+}
